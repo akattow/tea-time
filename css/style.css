@@ -1,0 +1,419 @@
+body {
+	height: 100%;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	font-size: 1em;
+}
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.container {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+}
+
+aside {
+	width: 35%;
+	max-width: 300px;
+	text-align: center;
+	position: relative;
+	height: 400px;
+}
+
+aside::after {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-color: rgb(38, 30, 28); 
+  background-image: url(https://kattow88.github.io/tea-time-signup/assets/tea-time.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+aside h3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: .25em .5em;
+}
+
+aside h2 {
+	font-size: 1.6em;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: .25em;
+}
+
+section {
+	height: 450px;
+	width: 40%;
+	max-width: 350px;
+	background-color: rgb(35, 30, 28);
+	color: white;
+	text-align: center;
+	position: relative;
+	box-shadow: -10px 10px 10px rgba(0, 0, 0, .05);
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.tabs {
+	display: table;
+	width: 100%;
+	background-color: rgb(20, 10, 8);
+	color: gray;
+}
+
+.tab {
+	display: table-cell;
+	width: 50%;
+	font-size: 1.2em;
+	margin: 0;
+	color: white;
+	cursor: pointer;
+	padding: .5em;
+}
+
+#up {
+}
+
+#in {
+}
+
+.tab:hover {
+	color: rgb(255, 163, 0);
+}
+
+form.signup [data-tab="signup"], form.signin [data-tab="signin"] {
+	color: rgb(255, 163, 0);
+	background-color: rgb(35, 30, 28);
+	font-weight: 600;
+}
+
+form.signup .signin, form.signin .signup {
+	display: none;
+}
+
+.tab-content {
+	padding: 1em;
+}
+
+label {
+	font-size: .8em;
+	color: rgb(255, 163, 0);
+	position: relative;
+	display: block;
+	padding-top: .5em;
+	margin-top: .25em;
+}
+
+input {
+	font-family: 'Raleway', sans-serif;
+	background-color: transparent;
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	border-bottom: 1px solid white;
+	width: 100%;
+	line-height: 2em;
+	font-size: 1.25em;
+	margin: .5em .2em 0;
+	color: white;
+	outline: none;
+}
+
+span {
+	display: block;
+	position: absolute;
+	top: 0; left: 0;
+	pointer-events: none;
+	padding: .5em .25em;
+	color: rgb(255, 163, 0);
+	opacity: 0;
+
+	-webkit-transition: 100ms ease-out all;
+	-moz-transition: 100ms ease-out all;
+	transition: 100ms ease-out all;
+
+	-webkit-transform: translate3d(0, .1em, 0);
+	-moz-transform: translate3d(0, .1em, 0);
+	transform: translate3d(0, .1em, 0);
+}
+
+input.hasText + span {
+	opacity: 1;
+	-webkit-transform: translate3d(0, -.25em, 0);
+	-moz-transform: translate3d(0, -.25em, 0);
+	transform: translate3d(0, -.25em, 0);
+}
+
+input:focus {
+	border-bottom-color: rgb(255, 163, 0);
+	color: rgb(255, 163, 0);
+}
+
+form input:valid {
+	color: rgb(255, 163, 0);
+}
+
+form input:invalid {
+	color: red;
+}
+
+form input.not-invalid:invalid {
+	color: rgb(255, 163, 0);
+}
+
+input[type="checkbox"] {
+	width: auto;
+	outline: normal;
+}
+
+input[type="checkbox"] + label {
+	position: relative;
+	vertical-align: top;
+	display: inline-block;
+	padding: .5em 0 0 0;
+	margin: .25em 0 0 0;
+}
+
+.name-set {
+	-webkit-animation: fadeEffect .4s;
+	-moz-animation: fadeEffect .4s;
+	animation: fadeEffect .4s;
+}
+
+.email-set {
+	-webkit-animation: fadeEffect .5s;
+	-moz-animation: fadeEffect .5s;
+	animation: fadeEffect .5s;
+}
+
+#pw-set-1 {
+	-webkit-animation: fadeEffect .6s;
+	-moz-animation: fadeEffect .6s;
+	animation: fadeEffect .6s;
+}
+
+#pw-set-2 {
+	-webkit-animation: fadeEffect .7s;
+	-moz-animation: fadeEffect .7s;
+	animation: fadeEffect .7s;
+}
+
+#show-pw1 {
+	-webkit-animation: fadeEffect .8s;
+	-moz-animation: fadeEffect .8s;
+	animation: fadeEffect .8s;
+}
+
+.email {
+	-webkit-animation: fadeEffect .4s;
+	-moz-animation: fadeEffect .4s;
+	animation: fadeEffect .4s;
+}
+
+.pw {
+	-webkit-animation: fadeEffect .45s;
+	-moz-animation: fadeEffect .45s;
+	animation: fadeEffect .45s;
+}
+
+#show-pw2 {
+	-webkit-animation: fadeEffect .5s;
+	-moz-animation: fadeEffect .5s;
+	animation: fadeEffect .5s;
+}
+
+.show-password {
+	width: auto;
+	background-color: white;
+}
+
+.show-pw {
+		text-align: left;
+		margin-top: .5em;
+		position: relative;
+}
+
+.remember {
+	position: relative;
+	-webkit-animation: fadeEffect .5s;
+	-moz-animation: fadeEffect .5s;
+	animation: fadeEffect .5s;
+	text-align: left;
+}
+
+.remember-check {
+	width: auto;
+	background-color: white;
+}
+
+button {
+	font-family: 'Raleway', sans-serif;
+	background-color: rgba(38, 30, 28, 0);
+	border: none;
+	color: white;
+	line-height: 2em;
+}
+
+#facebook, #twitter {
+	display: block;
+	margin: 1em auto;
+	width: 75%;
+	border-radius: 100px;
+	position: relative;
+}
+
+#facebook {
+	margin-top: 1.5em;
+	background-color: rgb(59,89,152);
+	-webkit-animation: fadeEffect .6s;
+	-moz-animation: fadeEffect .6s;
+	animation: fadeEffect .6s;
+}
+#facebook:hover {
+	background-color: rgb(95,126,193);
+}
+
+#twitter {
+	background-color: rgb(29,161,242);
+	-webkit-animation: fadeEffect .7s;
+	-moz-animation: fadeEffect .7s;
+	animation: fadeEffect .7s;
+}
+#twitter:hover {
+	background-color: rgb(59,201,255);
+}
+
+#submit-in, #submit-up {
+	display: block;
+	margin: 1em auto .5em auto;
+	width: 90%;
+	line-height: 2em;
+	background-color: rgb(255, 163, 0);
+	color: white;
+	font-size: 1.25em;
+	position: relative;
+	border-style: none;
+	-webkit-animation: fadeEffect .8s;
+	-moz-animation: fadeEffect .8s;
+	animation: fadeEffect .8s;
+	height: 100%;
+}
+#submit-in:hover, #submit-up:hover {
+	background-color: white;
+	color: rgb(255, 163, 0);
+}
+
+.more {
+	font-size: .7em;
+	color: white;
+	text-align: center;
+	position: relative;
+	-webkit-animation: fadeEffect .8s;
+	-moz-animation: fadeEffect .8s;
+	animation: fadeEffect .8s;
+}
+.more:hover {
+	color: rgb(255, 163, 0);
+}
+
+/*keyframes*/
+
+@-webkit-keyframes fadeEffect {
+	from {opacity: 0; bottom: -100px;}
+	to {opacity: 1; bottom: 0px;}
+}
+
+@-moz-keyframes fadeEffect {
+	from {opacity: 0; bottom: -100px;}
+	to {opacity: 1; bottom: 0px;}
+}
+
+@keyframes fadeEffect {
+	from {opacity: 0; bottom: -100px;}
+	to {opacity: 1; bottom: 0px;}
+}
+
+/*media*/
+@media screen and (max-height: 455px) {
+	aside h3 {
+		font-size: .9em;
+	}
+.tabs {
+		font-size: .6em;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		display: block;
+		margin: 0;
+		height: 100%;
+		width: 100%;
+	}
+
+	aside {
+		height: 30vh;
+		width: 100%;
+		max-width: 100%;
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+		background-size: 100%;
+	}
+
+	aside::after {
+	  content: "";
+	  opacity: 0.3;
+	}
+
+	aside h3 {
+		position: relative;
+		font-size: 1em;
+		-webkit-animation: fadeEffect 2s;
+		animation: fadeEffect 2s;
+	}
+
+	aside h2 {
+		font-size: 1.6em;
+		position: relative;
+		-webkit-animation: fadeEffect .6s;
+		animation: fadeEffect .6s;
+	}
+
+	section {
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		min-height: 70vh;
+		display: block;
+		box-shadow: none;
+	}
+}

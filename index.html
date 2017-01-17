@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,600" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<aside class="aside-hero">
+			<h3>top-shelf tea in your mailbox</h3>
+			<h2 id="try-hi">try tea time</h2>
+		</aside> <!--aside-hero-->
+
+		<section>
+			<form action="javascript:void(0)" method="post" enctype="multipart/form-data" id="content" class="signup" autocomplete="off">
+			<div class="tabs">
+				<a data-tab="signup" class="tab" id="up">sign up</a>
+				<a data-tab="signin" class="tab" id="in">sign in</a>
+			</div>
+			<div class="tab-content">
+				<div class="signup">
+					<div class="user-input">
+						<label class="name-set">
+							<input placeholder="full name" type="name" name="nameset" class="not-invalid" required autofocus>
+							<span class="float">full name</span>
+						</label>
+						<label class="email-set">
+							<input placeholder="email" type="email" name="emailset" class="not-invalid" required>
+							<span class="float">email</span>
+						</label>
+						<label class="pw-set" id="pw-set-1">
+							<input placeholder="password" id="passwordset1" class="password not-invalid" type="password" name="passwordset1" required>
+							<span class="float">password</span>
+						</label>
+						<label class="pw-set" id="pw-set-2">
+							<input placeholder="confirm password" id="passwordset2" class="password not-invalid" type="password" name="passwordset2" required>
+							<span class="float">confirm password</span>
+						</label>
+					</div> <!--user-input-->
+					<div class="show-pw" id="show-pw1">
+						<input type="checkbox" id="show-password1" class="checkbox show-password" unchecked>
+						<label for="show-password1">show password</label>
+					</div>
+					<div class="submit-button">
+						<input type="submit" id="submit-up" value="sign up" class="submit">
+					</div> <!--submit-button-->
+					<a href="#" class="more">terms and conditions</a>
+				</div> <!--signup-->
+
+				<div class="signin">
+					<div class="user-input">
+						<label class="email">
+							<input placeholder="email" id="email-in" type="email" name="email-in" class="not-invalid" required>
+							<span class="float">email</span>
+						</label>
+						<label class="pw">
+							<input placeholder="password" id="password-in" class="password not-invalid" type="password" name="password-in" required>
+							<span class="float">password</span>
+						</label>
+					</div> <!--user-input-->
+					<div class="show-pw" id="show-pw2">
+						<input type="checkbox" id="show-password2" class="checkbox show-password" unchecked>
+						<label for="show-password2">show password</label>
+					</div>
+					<div class="remember">
+						<input type="checkbox" class="checkbox remember-check" checked>
+						<label for="remember">remember me</label>
+					</div>
+					<div class="social-buttons">
+						<a href="javascript:void(0)" id="facebook"><button>Connect via Facebook</button></a>
+						<a href="javascript:void(0)" id="twitter"><button>Connect via Twitter</button></a>
+					</div> <!--social-buttons-->
+					<div class="submit-button">
+						<input type="submit" id="submit-in" value="sign in" class="submit">
+					</div> <!--submit-button-->
+					<a href="#" class="more">forgot your password?</a>
+				</div> <!--sign-in-->
+			</div>
+			</form>
+		</section> <!--content-box-->
+	</div>
+
+	<script type="text/javascript">
+	var form = document.getElementById('content');
+
+	form.addEventListener('keyup', function(e) {
+		if (e.target.nodeName === 'INPUT'){
+			e.target.className = (e.target.value.length) ? e.target.className + ' hasText' : e.target.className.replace('hasText', '');
+		}
+	});
+
+	var inputs = document.getElementsByTagName('input');
+
+	for (i = 0; i < inputs.length; i++) {
+		inputs[i].addEventListener('blur', function(e) {
+			e.target.className = e.target.className.replace('not-invalid', '');
+		});
+	}
+
+	form.addEventListener('click', function(e) {
+		if (e.target.className === 'tab') {
+			this.className = e.target.dataset.tab;
+		}
+	});
+
+    document.getElementById("show-password1").addEventListener("click", function(e){
+        var pwd1 = document.getElementById("passwordset1");
+        var pwd2 = document.getElementById("passwordset2");
+        if(pwd1.getAttribute("type")=="password"){
+            pwd1.setAttribute("type","text");
+            pwd2.setAttribute("type","text");
+        } else {
+            pwd1.setAttribute("type","password");
+            pwd2.setAttribute("type","password");
+        }
+    });
+
+    document.getElementById("show-password2").addEventListener("click", function(e){
+    	var pwd = document.getElementById("password-in");
+    	if(pwd.getAttribute("type")=="password"){
+    		pwd.setAttribute("type","text");
+    	} else {
+    		pwd.setAttribute("type","password");
+    	}
+    });
+
+
+	</script>
+</body>
+</html>
