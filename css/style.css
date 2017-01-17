@@ -41,7 +41,7 @@ aside::after {
   position: absolute;
   z-index: -1;
   background-color: rgb(38, 30, 28); 
-  background-image: url(https://kattow88.github.io/tea-time-signup/assets/tea-time.jpg);
+  background-image: url(https://kattow88.github.io/tea-time/assets/tea-time.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
