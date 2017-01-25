@@ -22,7 +22,7 @@
 				<div class="signup">
 					<div class="user-input">
 						<label class="name-set">
-							<input placeholder="full name" type="name" name="nameset" class="not-invalid" required autofocus>
+							<input placeholder="full name" type="name" name="nameset" class="not-invalid" required>
 							<span class="float">full name</span>
 						</label>
 						<label class="email-set">
@@ -101,6 +101,8 @@
 	form.addEventListener('click', function(e) {
 		if (e.target.className === 'tab') {
 			this.className = e.target.dataset.tab;
+			var firstInput = document.querySelector("." + this.className + " input")[0];
+			firstInput.focus();
 		}
 	});
 
